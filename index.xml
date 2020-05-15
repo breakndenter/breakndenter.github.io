@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog and More</title>
+    <title>Kiril&#39;s Security Blog</title>
     <link>https://www.offsec.dev/</link>
-    <description>Recent content on Blog and More</description>
+    <description>Recent content on Kiril&#39;s Security Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2008 - 2020, Kiril Stefanov; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 14 May 2017 19:59:59 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2020 16:22:24 +0300</lastBuildDate>
     
 	<atom:link href="https://www.offsec.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Here are some shellz</title>
-      <link>https://www.offsec.dev/posts/resources/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Writeups</title>
+      <link>https://www.offsec.dev/posts/writeups/</link>
+      <pubDate>Fri, 15 May 2020 16:22:24 +0300</pubDate>
       
-      <guid>https://www.offsec.dev/posts/resources/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <guid>https://www.offsec.dev/posts/writeups/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>IT Works!</title>
-      <link>https://www.offsec.dev/posts/test/</link>
-      <pubDate>Sun, 14 May 2017 19:59:59 +0300</pubDate>
+      <title>Resources</title>
+      <link>https://www.offsec.dev/posts/resources/</link>
+      <pubDate>Fri, 15 May 2020 16:22:16 +0300</pubDate>
       
-      <guid>https://www.offsec.dev/posts/test/</guid>
-      <description>s = &amp;#34;Python syntax highlighting&amp;#34; print s  </description>
+      <guid>https://www.offsec.dev/posts/resources/</guid>
+      <description></description>
     </item>
     
   </channel>
