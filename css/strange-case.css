@@ -281,11 +281,11 @@ p.attr {
 
 /* Slate Scheme */
 .scheme-slate .sidebar {
-	background-color: #a7adba;
-	color: #343d46;
+	background-color: #000000;
+	color: #d7d9ca;
 }
 .scheme-slate .sidebar h1 {
-	color: #2b303b;
+	color: #ffffff;
 }
 .scheme-slate .sidebar a {
 	color: #bf616a;
