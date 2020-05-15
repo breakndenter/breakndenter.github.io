@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.offsec.dev/posts/cache/</loc>
-    <lastmod>2020-05-15T18:17:40+03:00</lastmod>
+    <loc>https://www.offsec.dev/posts/enum/</loc>
+    <lastmod>2020-05-15T20:15:58+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.offsec.dev/</loc>
-    <lastmod>2020-05-15T18:17:40+03:00</lastmod>
+    <lastmod>2020-05-15T20:15:58+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.offsec.dev/posts/</loc>
+    <lastmod>2020-05-15T20:15:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.offsec.dev/posts/shells/</loc>
+    <lastmod>2020-05-15T20:15:41+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.offsec.dev/posts/cache/</loc>
     <lastmod>2020-05-15T18:17:40+03:00</lastmod>
   </url>
   
