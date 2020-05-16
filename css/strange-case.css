@@ -22,6 +22,8 @@
 
 
 html, body {
+	margin: 0 !important;
+	padding: 0 !important;
 	height: 100%
 }
 h1, h2, h3, h4 {
@@ -35,13 +37,12 @@ img {
 	max-width:100%;
 }
 
-
-
 /* BLOG CONTENT */
 
-
 .content {
-	padding-left: 5em;
+	padding-left: 3em;
+	background-color: rgba(255, 255, 255, 0.9);
+	opacity: 100%;
 }
 @media (max-width: 768px) {
 	.content {
@@ -50,6 +51,7 @@ img {
 }
 .post {
 	margin-bottom: 3em;
+	display:table;
 }
 .post .post-heading {
 	margin-bottom: 1em;
@@ -79,7 +81,7 @@ img {
 
 .sidebar {
 	padding: 2em;
-	font-size: 1.3em;
+	font-size: 1.1em;
 	text-align: left;
 }
 .sidebar .sidebar-content {
@@ -92,7 +94,7 @@ img {
 .sidebar .sidebar-menus {
 	padding-left: 0;
 	margin-left: 0;
-	margin-top: 1.5em;
+	margin-top: 1em;
 }
 .sidebar .sidebar-menus li {
 	list-style: none;
@@ -138,7 +140,7 @@ img {
 	}
 }
 .sidebar h1 {
-	font-size: 1.8em;
+	font-size: 2em;
 	font-weight: bold;
 	margin-bottom: 0;
 }
@@ -146,7 +148,7 @@ img {
 	font-size: 0.8em;
 }
 p.copyright {
-	font-size: 0.7em;
+	font-size: 0.5em;
 	border-top: 1px dotted #ccc;
 	padding-top: 1em;
 	margin-top: 2em;
@@ -154,7 +156,7 @@ p.copyright {
 }
 p.attr {
 	margin-top: 0;
-	font-size: 0.6em;
+	font-size: 0.4em;
 }
 
 

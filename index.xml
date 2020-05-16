@@ -18,7 +18,10 @@
       <pubDate>Fri, 15 May 2020 20:15:58 +0300</pubDate>
       
       <guid>https://www.offsec.dev/posts/enum/</guid>
-      <description></description>
+      <description>hugoBasicExample This is an example site for Hugo.
+It is intended to be a demo site for the various Hugo themes.
+Using  Install Hugo Clone this repository  git clone https://github.com/gohugoio/hugoBasicExample.git cd hugoBasicExample Clone the repository you want to test. If you want to test all hugo themes, you can clone the full list  git clone --recursive https://URL/OF/YOUR/THEME themes/YOURTHEME or
+git clone --recursive https://github.com/gohugoio/hugoThemes.git themes Run Hugo and select the theme of your choosing  hugo server -t YOURTHEME hugoBasicExample This is an example site for Hugo.</description>
     </item>
     
     <item>

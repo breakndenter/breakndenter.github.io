@@ -1,0 +1,11 @@
+canvas {
+  
+  position: fixed;
+  opacity: 50%;
+  top: 40px;
+  left: 0;
+  display:table;
+  height:100%;
+  width: 100%;
+  background-color: black;
+}
