@@ -7,7 +7,7 @@ var w = c.width = window.innerWidth,
     initialWidth = 10,
     maxLines = 100,
     initialLines = 4,
-    speed = 5,
+    speed = 2,
     
     lines = [],
     frame = 0,
@@ -41,7 +41,7 @@ function init() {
   for( var i = 0; i < initialLines; ++i )
     lines.push( new Line( starter ) );
   
-  ctx.fillStyle = '#ffffff';
+  ctx.fillStyle = '#1c1c1c';
   ctx.fillRect( 0, 0, w, h );
   
   // if you want a cookie ;)
