@@ -53,10 +53,10 @@ git clone --recursive https://github.com/gohugoio/hugoThemes.git themes Run Hugo
     
     <item>
       <title>HackTheBox - Access Walkthrough</title>
-      <link>https://www.offsec.dev/posts/access/</link>
+      <link>https://www.offsec.dev/posts/cache/</link>
       <pubDate>Sat, 02 Mar 2019 17:23:31 +0200</pubDate>
       
-      <guid>https://www.offsec.dev/posts/access/</guid>
+      <guid>https://www.offsec.dev/posts/cache/</guid>
       <description>1. Recon and Information gathering Nmap ╭─root@warmachine ~/hackthebox/access ╰─# cat base_tcp.nmap # Nmap 7.70 scan initiated Sun Feb 24 22:40:43 2019 as: nmap -sV -sC -oN base_tcp.nmap 10.10.10.98 Nmap scan report for 10.10.10.98 Host is up (0.037s latency). Not shown: 997 filtered ports PORT STATE SERVICE VERSION 21/tcp open ftp Microsoft ftpd | ftp-anon: Anonymous FTP login allowed (FTP code 230) |_Can&amp;#39;t get directory listing: PASV failed: 425 Cannot open data connection.</description>
     </item>
     

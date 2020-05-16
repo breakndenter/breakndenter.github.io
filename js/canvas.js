@@ -40,16 +40,18 @@ function init() {
   
   for( var i = 0; i < initialLines; ++i )
     lines.push( new Line( starter ) );
-  
-  ctx.fillStyle = '#1c1c1c';
+
+  // responsible for background color
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect( 0, 0, w, h );
   
   // if you want a cookie ;)
   // ctx.lineCap = 'round';
 }
 function getColor( x ) {
-  
-  return 'hsl( hue, 80%, 50% )'.replace(
+  // changes the collor shift and palete
+  // return 'hsl( hue, 80%, 50% )'.replace(
+  return 'hsl( hue, 20%, 10% )'.replace(
   	'hue', x / w * 360 + frame
   );
 }
