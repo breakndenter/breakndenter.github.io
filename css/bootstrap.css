@@ -3608,8 +3608,9 @@ tbody.collapse.in {
   white-space: nowrap;
 }
 .dropdown-backdrop {
-  position: fixed;
+  position: absolute !important;
   top: 0;
+  display: none;
   right: 0;
   bottom: 0;
   left: 0;
