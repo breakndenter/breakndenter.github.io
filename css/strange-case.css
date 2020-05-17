@@ -50,7 +50,7 @@ img {
 }
 .post {
 	margin-bottom: 3em;
-	display:table;
+	/*display:table;*/
 }
 .post .post-heading {
 	margin-bottom: 1em;
@@ -292,7 +292,7 @@ p.attr {
 /* Slate Scheme */
 .scheme-slate .sidebar {
 	background-color: #000000;
-	color: #d7d9ca;
+	color: #c1df00;
 }
 .scheme-slate .sidebar h1 {
 	color: #ffffff;
