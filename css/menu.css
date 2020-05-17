@@ -3210,7 +3210,9 @@ hr {
 }
 /* dropdowns */
 .dropdown-menu {
-  z-index: 1000;
+  z-index: 1;
+  max-height: 300px;
+  min-height: 50px;
   font-size: 22px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -3226,7 +3228,6 @@ hr {
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;
-  overflow: hidden;
   background-color: #e5e5e5;
 }
 .dropdown-menu > li > a {

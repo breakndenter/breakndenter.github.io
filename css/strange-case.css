@@ -41,6 +41,7 @@ img {
 
 .content {
 	padding-left: 3em;
+	z-index: -1;
 	background-color: rgba(255, 255, 255, 0.95);
 }
 @media (max-width: 768px) {
@@ -50,7 +51,7 @@ img {
 }
 .post {
 	margin-bottom: 3em;
-	/*display:table;*/
+	display:table;
 }
 .post .post-heading {
 	margin-bottom: 1em;
@@ -80,7 +81,7 @@ img {
 
 .sidebar {
 	padding: 2em;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	text-align: left;
 	/*overflow: auto;*/ 
 	/*position:relative;*/
@@ -100,13 +101,11 @@ img {
 	padding-left: 0;
 	margin-left: 0;
 	margin-top: 1em;
-	font-size: 1.8em;
 }
 .sidebar .sidebar-menus li {
 	list-style: none;
 	font-size:1em;
 	overflow: hidden;
-	font-size: 1.8em;
 }
 .sidebar .sidebar-recent {
 	margin-top: 1.5em;
@@ -292,7 +291,7 @@ p.attr {
 /* Slate Scheme */
 .scheme-slate .sidebar {
 	background-color: #000000;
-	color: #c1df00;
+	color: #d7d9ca;
 }
 .scheme-slate .sidebar h1 {
 	color: #ffffff;
@@ -306,3 +305,4 @@ p.attr {
 .scheme-slate .post .post-heading span {
 	color: #9a9a9a;
 }
+
