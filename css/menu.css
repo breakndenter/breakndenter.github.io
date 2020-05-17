@@ -3211,7 +3211,7 @@ hr {
 /* dropdowns */
 .dropdown-menu {
   z-index: 10;
-  max-height: 450px;
+  max-height: 440px;
   min-height: 50px;
   font-size: 22px;
   background-color: #ffffff;
