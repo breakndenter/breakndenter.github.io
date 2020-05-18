@@ -7,10 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2008 - 2020, Kiril Stefanov; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 15 May 2020 20:15:58 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2020 13:00:43 +0300</lastBuildDate>
     
 	<atom:link href="https://www.offsec.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansi_art</title>
+      <link>https://www.offsec.dev/posts/ansi_art/</link>
+      <pubDate>Mon, 18 May 2020 13:00:43 +0300</pubDate>
+      
+      <guid>https://www.offsec.dev/posts/ansi_art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ctf_post</title>
+      <link>https://www.offsec.dev/posts/ctf_post/</link>
+      <pubDate>Mon, 18 May 2020 12:59:46 +0300</pubDate>
+      
+      <guid>https://www.offsec.dev/posts/ctf_post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://www.offsec.dev/posts/blog/</link>
+      <pubDate>Mon, 18 May 2020 12:57:35 +0300</pubDate>
+      
+      <guid>https://www.offsec.dev/posts/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://www.offsec.dev/posts/about/</link>
+      <pubDate>Mon, 18 May 2020 12:51:53 +0300</pubDate>
+      
+      <guid>https://www.offsec.dev/posts/about/</guid>
+      <description>Whoami  Hi, My name is Kiril, split into persentage I&amp;rsquo;m 35% CTF player {} 9.2% Penetration Tester {} 40% System &amp;amp; Network Administrator {} 20% Ethical Hacker {} 5.8% Bug Bounty Hunter     The more observant will conclude that adds up to 110% &amp;hellip; that&amp;rsquo;s because I allways give more than required :)
+  Couple of key things about me: Born in 1987 ever since I was able to walk and say thing other than Gu,gu,Ga,ga I was constanly fooling around with computers and games.</description>
+    </item>
     
     <item>
       <title>Enum</title>
