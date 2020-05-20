@@ -41,7 +41,8 @@ img {
 
 .content {
 	padding-left: 3em;
-	z-index: 1;
+	position: absolute !important;
+	z-index: 0;
 	background-color: rgba(255, 255, 255, 0.99);
 }
 @media (max-width: 768px) {
@@ -126,6 +127,7 @@ img {
 		top: 0;
 		bottom: 0;
 		left: 0;
+		z-index: 1;
 		position: fixed;
 	}
 	.sidebar-content {

@@ -3210,7 +3210,7 @@ hr {
 }
 /* dropdowns */
 .dropdown-menu {
-  z-index: 10;
+  z-index: 2;
   max-height: 440px;
   min-height: 50px;
   font-size: 22px;
@@ -3221,6 +3221,7 @@ hr {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   -webkit-overflow-scrolling: touch;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  position: absolute;
 }
 .dropdown-menu.pull-right {
   right: 0;
