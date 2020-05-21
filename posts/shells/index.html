@@ -162,8 +162,6 @@ for (var p = 0; p < elements.length; p++) {
   var port = str.replace("PORT", r_port);
   elements[p].innerHTML = port;
 }
-  document.getElementById('IP').value = '';
-  document.getElementById('PORT').value = '';
   document.getElementById("btSubmt").disabled = true;
 }
 
@@ -186,6 +184,8 @@ for (var p = 0; p < elements.length; p++) {
   var port = str.replace(r_port, "PORT");
   elements[p].innerHTML = port;
 }
+  document.getElementById('IP').value = '';
+  document.getElementById('PORT').value = '';
 }
 
 
