@@ -1,35 +1,8 @@
-var popupTimer;
-
-function delayPopup(popup) {
-    popupTimer = setTimeout(function() { $(popup).popup('hide') }, 4200);
-}
-
-$(document).ready(function () {
-    $('.copyToken').click(function (){
-        clearTimeout(popupTimer);
-
-        var $input = $(this).closest('div').find('.copyInput');
-
-        /* Select the text field */
-        $input.select();
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-        $(this)
-            .popup({
-                title    : 'Successfully copied to clipboard!',
-                content  : 'Share this link with your receiver or distributor so they can confirm their order.',
-                on: 'manual',
-                exclusive: true
-            })
-            .popup('show')
-        ;
-
-        // Hide popup after 5 seconds
-        delayPopup(this);
-
-
-    });
-
-});
+var copyBtn = document.querySelector('#copier_btn');
+copyBtn.addEventListener('click', function () {
+  var copiedObj = document.querySelector('#copied_text');
+  // select the contents
+  copiedObj.select();
+  
+  document.execCommand('copy'); // or 'cut'
+}, false);
