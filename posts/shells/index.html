@@ -143,22 +143,18 @@ Your IP: <input type="text" id="IP" value="">
 Your Port: <input type="text" id="PORT" value="">
 
 <button onclick="myFunction()">Fill</button>
-
+<button onclick="reset()">Clear</button>
 <script>
 
 function myFunction() {
 var elements = document.getElementsByClassName('highlight');
 for (var i = 0; i < elements.length; i++) {
   var str = elements[i].innerHTML;
-	if(str.match("YOUR_IP")){
-  		var r_ip = document.getElementById("IP").value;
-  		var ip = str.replace("YOUR_IP", r_ip);
-  		elements[i].innerHTML = ip;
-	}else{
-		alert("not matching YOUR_IP");
-	}
+  var r_ip = document.getElementById("IP").value;
+  var ip = str.replace("YOUR_IP", r_ip);
+  elements[i].innerHTML = ip;
 }
-}
+
 
 for (var p = 0; p < elements.length; p++) {
   var str = elements[p].innerHTML;
@@ -167,6 +163,24 @@ for (var p = 0; p < elements.length; p++) {
   elements[p].innerHTML = port;
 }
 }
+
+function reset() {
+var elements = document.getElementsByClassName('highlight');
+for (var i = 0; i < elements.length; i++) {
+  var str = elements[i].innerHTML;
+  var r_ip = document.getElementById("IP").value;
+  var ip = str.replace(r_ip, "YOUR_IP");
+  elements[i].innerHTML = ip;
+}
+
+for (var p = 0; p < elements.length; p++) {
+  var str = elements[p].innerHTML;
+  var r_port = document.getElementById("PORT").value;
+  var port = str.replace(r_port, "PORT");
+  elements[p].innerHTML = port;
+}
+}
+
 
 </script>
 
