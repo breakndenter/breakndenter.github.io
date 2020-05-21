@@ -144,10 +144,11 @@
 <button onclick="myFunction()">Try it</button>
 
 <script>
+
 function myFunction() {
-var html=document.getElementByClassName('highlight').innerHTML;
-html = html.replace(/YOUR_IP/g,"WORKS");
-document.getElementByClassName('highlight').innerHTML=html;
+  var str = document.getElementsByClassName("highlight").innerHTML; 
+  var res = str.replace(/YOUR_IP/g, "WORKS");
+  document.getElementsByClassName("highlight").innerHTML = res;
 }
 
 </script>
