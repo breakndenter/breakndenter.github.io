@@ -152,9 +152,11 @@ var elements = document.getElementsByClassName('highlight');
 for (var i = 0; i < elements.length; i++) {
   var str = elements[i].innerHTML;
   var r_ip = document.getElementById("yourIP").value;
+  var r_ip_f = new RegExp(r_ip, "g");
   var r_port = document.getElementById("yourPORT").value;
-  var ip = str.replace("YOUR_IP", r_ip);
-  var port = str.replace("PORT", r_port);
+  var r_port_f = new RegExp(r_port, "g");
+  var ip = str.replace("YOUR_IP", r_ip_f);
+  var port = str.replace("PORT", r_port_f);
   elements[i].innerHTML = ip;
   elements[i].innerHTML = port;
 }
