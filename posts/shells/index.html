@@ -145,8 +145,9 @@
 
 <script>
 function myFunction() {
-	document.body.innerText = document.body.innerText.replace('YOUR_IP', 'WORKed');
-
+var html=document.getElementByClassName('highlight').innerHTML;
+html = html.replace(/YOUR_IP/g,"WORKS");
+document.getElementByClassName('highlight').innerHTML=html;
 }
 
 </script>
