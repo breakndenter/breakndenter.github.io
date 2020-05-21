@@ -145,12 +145,10 @@
 
 <script>
 function myFunction() {
-  var elements = document.querySelectorAll("[id^='to-copy*']").innerHTML;
-	for(var e in elements){
-		var res = str.replace(/YOUR_IP/g, "WORKED");
-		document.getElementById("to-copy-bash").innerHTML = res;
-	}
+	document.body.innerText = document.body.innerText.replace('YOUR_IP', 'WORKed');
+
 }
+
 </script>
 
 <h2 id="bash">Bash</h2>
