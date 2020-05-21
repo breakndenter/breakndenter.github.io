@@ -150,12 +150,12 @@ function myFunction() {
 var elements = document.getElementsByClassName('highlight');
 for (var i = 0; i < elements.length; i++) {
   var str = elements[i].innerHTML;
-  var r_ip = document.getElementById("IP").value;
-	if (str.match("YOUR_IP")){ 
-  	var ip = str.replace("YOUR_IP", r_ip);
-  	elements[i].innerHTML = ip;
+	if(str.match("YOUR_IP")){
+  		var r_ip = document.getElementById("IP").value;
+  		var ip = str.replace("YOUR_IP", r_ip);
+  		elements[i].innerHTML = ip;
 	}else{
-	alert("str.match not working");
+		alert("not matching YOUR_IP");
 	}
 }
 }
