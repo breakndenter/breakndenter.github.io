@@ -168,22 +168,12 @@ for (var p = 0; p < elements.length; p++) {
 <script>
 
 function reset() {
-	var check = document.getElementById("IP").value;
-	if(check.value.lenght == 0) 
-	{
-		return false;
-	}
-	else
-	{
-	var elements = document.getElementsByClassName('highlight');
-	for (var i = 0; i < elements.length; i++) 
-		{
-  			var str = elements[i].innerHTML;
-  			var r_ip = document.getElementById("IP").value;
-  			var ip = str.replace(r_ip, "YOUR_IP");
-  			elements[i].innerHTML = ip;
-			return true;
-		}
+  var elements = document.getElementsByClassName('highlight');
+  for (var i = 0; i < elements.length; i++) {
+  var str = elements[i].innerHTML;
+  var r_ip = document.getElementById("IP").value;
+  var ip = str.replace(r_ip, "YOUR_IP");
+  elements[i].innerHTML = ip;
 }
 
 for (var p = 0; p < elements.length; p++) {
