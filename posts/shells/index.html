@@ -146,9 +146,13 @@
 <script>
 
 function myFunction() {
-  var str = document.getElementsByClassName("highlight").innerHTML; 
-  var res = str.replace(/YOUR_IP/g, "WORKS");
-  document.getElementsByClassName("highlight").innerHTML = res;
+var elements = document.getElementsByClassName('gv-field-4-custom');
+
+for (var i = 0; i < elements.length; i++) {
+  var str = elements[i].innerHTML;
+  var text = str.replace("YOUR_IP", "WORKS");
+  elements[i].innerHTML = text;
+}
 }
 
 </script>
