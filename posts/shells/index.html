@@ -139,8 +139,8 @@
 
 <p>You can populate your own ip-address and port in the coresponding fields</p>
 <p>After that just click the "Fill" button and copy whatever type you need :)</p>
-Your IP: <input type="text" id="IP" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}" placeholder="desire ip" value="">
-Your Port: <input type="text" id="PORT" pattern="[0-9]{5}" placeholder="desired port" value="">
+Your IP: <input type="text" id="IP" pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="desire ip" value="">
+Your Port: <input type="text" id="PORT" pattern="\d[1,5]\" placeholder="desired port" value="">
 
 <button onclick="myFunction()">Fill</button>
 <button onclick="reset()">Clear</button>
