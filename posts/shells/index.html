@@ -145,9 +145,11 @@
 
 <script>
 function myFunction() {
-  var str = document.getElementById("to-copy-bash").innerHTML; 
-  var res = str.replace(/YOUR_IP/g, "WORKED");
-  document.getElementById("to-copy-bash").innerHTML = res;
+  var elements = document.querySelectorAll("[id^='to-copy*']").innerHTML;
+	for(var e in elements){
+		var res = str.replace(/YOUR_IP/g, "WORKED");
+		document.getElementById("to-copy-bash").innerHTML = res;
+	}
 }
 </script>
 
