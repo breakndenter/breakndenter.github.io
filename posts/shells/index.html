@@ -151,9 +151,7 @@ var elements = document.getElementsByClassName('highlight');
 for (var i = 0; i < elements.length; i++) {
   var str = elements[i].innerHTML;
   var ip = str.replace("YOUR_IP", "WORKS");
-  var port = str.replace("PORT", "POST_ALSO_WORKS");
   elements[i].innerHTML = ip;
-  elements[i].innerHTML = port;
 }
 }
 
