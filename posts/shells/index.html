@@ -139,8 +139,8 @@
 
 <p>You can populate your own ip-address and port in the coresponding fields</p>
 <p>After that just click the "Fill" button and copy whatever type you need :)</p>
-Your IP: <input type="text" id="IP" value="">
-Your Port: <input type="text" id="PORT" value="">
+Your IP: <input type="text" id="IP" value="desired ip">
+Your Port: <input type="text" id="PORT" value="desired port">
 
 <button onclick="myFunction()">Fill</button>
 <button onclick="reset()">Clear</button>
@@ -163,9 +163,6 @@ for (var p = 0; p < elements.length; p++) {
   elements[p].innerHTML = port;
 }
 }
-
-</script>
-<script>
 
 function reset() {
   var elements = document.getElementsByClassName('highlight');
