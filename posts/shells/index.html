@@ -142,7 +142,17 @@
 Your IP: <input type="text" id="IP" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="desired ip" value="">
 Your Port: <input type="text" id="PORT" required pattern="\d[1,5]\" placeholder="desired port" value="">
 <button id="btSubmt" onclick="myFunction()">Fill</button>
-<button id="btClear" disabled onclick="reset()">Clear</button>
+
+<form>
+	<div>
+		<label for="IP">Your IP: </label>
+		<input type="text" id="IP" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="desired ip" value="">
+		<span class="validity"></span>
+	</div<>
+	<div>
+		<button id="btClear" onclick="reset()">Clear</button>
+	</div>
+</form>
 <script>
 
 function myFunction() {
