@@ -138,6 +138,20 @@
 <h2 id="bash">Bash</h2>
 <p> </p>
 
+.wrapper
+  input#select-this(value="I just copied this with only JavaScript")
+    button#clickMe.button
+        | copy
+<script>
+	let button = document.getElementById('clickMe');
+
+button.addEventListener('click', function(e) {
+	  e.preventDefault();
+	  document.execCommand('copy', false, document.getElementById('select-this').select());
+});
+</script>
+
+
 <div class="ui action input">
 <input type="text" class="copyInput" value="http://kushy.net/confirm/58493-2847593-3849?token=58349$3959$$8393038848">
 <button type="button" name="copyToken" value="copy" class="copyToken ui right icon button">
