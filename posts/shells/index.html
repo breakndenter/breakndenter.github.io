@@ -151,25 +151,27 @@
 <script>
 
 function myFunction() {
-var patt = new RegExp("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-var patp = new RegExp("/^[0-9]{1-5}$/");
-if(document.getElementById("IP").value=='')
+	var patt = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+	var patp = /^\d{5}$/;
+	var ip_addr = document.getElementById("IP").value
+	var port_n = document.getElementById("PORT").value
+if(ip_addr == ' ')
         {
-        alert('You need to input valid address ');
+        alert('You need to input something as ip address');
         document.getElementById("IP").style.borderColor="red";
         document.getElementById("IP").style.backgroundColor="yellow";
         document.getElementById("IP").style.borderWidth=2;
         return false;
         }
-    else if (document.getElementById("PORT").value=='')  
+    else if (port_n == '')  
      {  
-        alert('You need to input something');
+        alert('You need to input something as port');
         document.getElementById("PORT").style.borderColor="red";
         document.getElementById("PORT").style.backgroundColor="yellow";
         document.getElementById("PORT").style.borderWidth=2;
         return false;  
      }
-    else if (document.getElementById("IP").value.test(patt))
+    else if (patt.test(ip_addr) == false)
      {
         alert('You need to input valid IP format');
         document.getElementById("IP").style.borderColor="red";
@@ -177,7 +179,7 @@ if(document.getElementById("IP").value=='')
         document.getElementById("IP").style.borderWidth=2;
         return false;  
      }
-    else if (document.getElementById("PORT").value.test(patp))
+    else if (patp.test(port_n) == false)
      {  
         alert('Port must be between 0-65535');
         document.getElementById("PORT").style.borderColor="red";
@@ -186,7 +188,7 @@ if(document.getElementById("IP").value=='')
         return false;  
      } 
     else {
-document.getElementById("btClear").disabled = false;
+/*document.getElementById("btClear").disabled = false;*/
 var elements = document.getElementsByClassName('highlight');
 for (var i = 0; i < elements.length; i++) {
   var str = elements[i].innerHTML;
