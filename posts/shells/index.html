@@ -142,7 +142,10 @@
 <form action="#">
 Your IP: <input type="text" id="IP" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="desired ip" value="" onkeyup="if(this.textLength != 0) {btSubmt.disabled = false} else {btSubmt.disabled = true}">
 Your Port: <input type="text" id="PORT" required pattern="\d[1,5]\" placeholder="desired port" value="" onkeyup="if(this.textLength != 0) {btSubmt.disabled = false} else {btSubmt.disabled = true}">
+<button id="btSubmt" disabled onclick="return(validate());">Fill</button>
+<button id="btClear" disabled onclick="reset()">Clear</button>
 </form>
+<br> </br>
 <button id="btSubmt" disabled onclick="return(validate());">Fill</button>
 <button id="btClear" disabled onclick="reset()">Clear</button>
 <script>
