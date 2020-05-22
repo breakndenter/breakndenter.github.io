@@ -151,6 +151,7 @@
 <script>
 
 function myFunction() {
+var patt = new RegExp("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
 if(document.getElementById("IP").value=='')
         {
         alert('You need to input valid address ');
@@ -168,7 +169,6 @@ if(document.getElementById("IP").value=='')
        return false;  
      }
     else if 
-	var patt = new RegExp("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
 	(document.getElementById("IP").patt.test(value)
      {  
         alert('You need to input valid IP format');
