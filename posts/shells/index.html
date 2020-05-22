@@ -152,6 +152,7 @@
 
 function myFunction() {
 var patt = new RegExp("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+var patp = new RegExp("^[0-9]{1-5}$");
 if(document.getElementById("IP").value=='')
         {
         alert('You need to input valid address ');
@@ -176,7 +177,7 @@ if(document.getElementById("IP").value=='')
         document.getElementById("IP").style.borderWidth=2;
         return false;  
      }
-    else if (document.getElementById("PORT").str.match("/^[0-9]{1-5}$/")
+    else if (document.getElementById("PORT").patp.test(value))
      {  
         alert('Port must be between 0-65535');
         document.getElementById("PORT").style.borderColor="red";
