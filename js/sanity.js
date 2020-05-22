@@ -58,12 +58,14 @@ for (var i = 0; i < elements.length; i++) {
   var r_ip = document.getElementById("IP").value;
   var ip = str.replace("YOUR_IP", r_ip);
   elements[i].innerHTML = ip;
+}
 
 for (var p = 0; p < elements.length; p++) {
   var str = elements[p].innerHTML;
   var r_port = document.getElementById("PORT").value;
   var port = str.replace("PORT", r_port);
   elements[p].innerHTML = port;
+}
   txt = "You are now ready to copy your desired shell down below";
   document.getElementById("result").innerHTML = txt;
   var ip_addr = document.getElementById("IP").value;
@@ -72,10 +74,9 @@ for (var p = 0; p < elements.length; p++) {
   res2 = port_n
   document.getElementById("IP").value = "";
   document.getElementById("PORT").value = "";
-  return true;
+  /*return true;*/
 }
-}
-}
+
 
 
 function reset(){
