@@ -28,13 +28,15 @@ if(ip_addr == ' ')
         document.getElementById("result").innerHTML = txt;
         return false;  
      }
-    else if (ip_addr_changed != ip_addr)
+    else if (ip_addr_changed.equals(ip_addr) == false)
 	{
 		function reset();
+		continue;
 	}
-    else if (port_nu_changed != port_n)
+    else if (port_nu_changed.equals(port_n) == false)
 	{
 		function reset();
+		continue;
 	}
     else {
 document.getElementById("btClear").disabled = false;
