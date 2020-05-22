@@ -28,13 +28,20 @@ if(ip_addr == ' ')
         document.getElementById("result").innerHTML = txt;
         return false;  
      }
-    else if (ip != ip_addr)
+    else if {
+            var elements = document.getElementsByClassName('highlight');
+            for (var p = 0; p < elements.length; p++) {
+                    var str = elements[i].innerHTML;
+                    var r_ip = document.getElementById("IP").value;
+                    if(r_ip != ip_addr)
+            }
      {
         txt = "Please clear the fields and start over";
         document.getElementById("result").innerHTML = txt;
         document.getElementById("IP").value = ip_addr;
         return false;
      }
+    }
     else {
 document.getElementById("btClear").disabled = false;
 var elements = document.getElementsByClassName('highlight');
