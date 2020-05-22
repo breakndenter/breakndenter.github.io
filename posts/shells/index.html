@@ -169,7 +169,7 @@ if(document.getElementById("IP").value=='')
         document.getElementById("PORT").style.borderWidth=2;
         return false;  
      }
-    else if (document.getElementById("IP").patt.test(value))
+    else if (document.getElementById("IP").value.match(patt))
      {
         alert('You need to input valid IP format');
         document.getElementById("IP").style.borderColor="red";
@@ -177,7 +177,7 @@ if(document.getElementById("IP").value=='')
         document.getElementById("IP").style.borderWidth=2;
         return false;  
      }
-    else if (document.getElementById("PORT").patp.test(value))
+    else if (document.getElementById("PORT").value.match(patp))
      {  
         alert('Port must be between 0-65535');
         document.getElementById("PORT").style.borderColor="red";
