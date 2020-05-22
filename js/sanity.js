@@ -76,7 +76,7 @@ for (var p = 0; p < elements.length; p++) {
   document.getElementById("PORT").value = "";
   /*return true;*/
 }
-
+}
 
 
 function reset(){
