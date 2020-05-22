@@ -26,7 +26,7 @@ function myFunction(){
         var ip_addr = document.getElementById("IP").value
         var port_n = document.getElementById("PORT").value
         var txt = ""
-if(ip_addr == ' ')
+if(ip_addr == '')
         {
         txt = "IP Address field can not be empty";
         document.getElementById("result").innerHTML = txt
@@ -60,7 +60,7 @@ for (var i = 0; i < elements.length; i++) {
   elements[i].innerHTML = ip;
 }
 
-
+var elements = document.getElementsByClassName('highlight');
 for (var p = 0; p < elements.length; p++) {
   var str = elements[p].innerHTML;
   var r_port = document.getElementById("PORT").value;
