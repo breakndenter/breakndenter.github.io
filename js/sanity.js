@@ -27,7 +27,14 @@ if(ip_addr == ' ')
         txt = "Port must be between 0-65535";
         document.getElementById("result").innerHTML = txt;
         return false;  
-     } 
+     }
+    else if (ip != ip_addr)
+     {
+        txt = "Please clear the fields and start over";
+        document.getElementById("result").innerHTML = txt;
+        document.getElementById("IP").value = ip_addr;
+        return false;
+     }
     else {
 document.getElementById("btClear").disabled = false;
 var elements = document.getElementsByClassName('highlight');
