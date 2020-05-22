@@ -166,16 +166,15 @@ if(document.getElementById("IP").value=='')
         document.getElementById("PORT").style.borderColor="red";
         document.getElementById("PORT").style.backgroundColor="yellow";
         document.getElementById("PORT").style.borderWidth=2;
-       return false;  
+        return false;  
      }
-    else if 
-	(document.getElementById("IP").patt.test(value)
-     {  
+    else if (document.getElementById("IP").patt.test(value))
+     {
         alert('You need to input valid IP format');
         document.getElementById("IP").style.borderColor="red";
         document.getElementById("IP").style.backgroundColor="yellow";
         document.getElementById("IP").style.borderWidth=2;
-       return false;  
+        return false;  
      }
     else if (document.getElementById("PORT").str.match("/^[0-9]{1-5}$/")
      {  
@@ -183,7 +182,7 @@ if(document.getElementById("IP").value=='')
         document.getElementById("PORT").style.borderColor="red";
         document.getElementById("PORT").style.backgroundColor="yellow";
         document.getElementById("PORT").style.borderWidth=2;
-       return false;  
+        return false;  
      } 
     else {
 document.getElementById("btClear").disabled = false;
