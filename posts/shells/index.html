@@ -141,8 +141,8 @@
 <p>After that just click the "Fill" button and copy whatever type you need :)</p>
 <form>
 	<div>
-	  Your IP: <input type="text" id="IP" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="desired ip" value="">
-	  Your Port: <input type="text" id="PORT" required pattern="\d[1,5]\" placeholder="desired port" value="">
+	  Your IP: <input type="text" id="IP" required placeholder="desired ip" value="">
+	  Your Port: <input type="text" id="PORT" placeholder="desired port" value="">
 	  <button id="btSubmt" onclick="myFunction()">Fill</button>
 	  <button id="btClear" onclick="reset()">Clear</button>
 	</div>
@@ -152,7 +152,7 @@
 
 function myFunction() {
 var patt = new RegExp("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-var patp = new RegExp("^[0-9]{1-5}$");
+var patp = new RegExp("/^[0-9]{1-5}$/");
 if(document.getElementById("IP").value=='')
         {
         alert('You need to input valid address ');
@@ -163,7 +163,7 @@ if(document.getElementById("IP").value=='')
         }
     else if (document.getElementById("PORT").value=='')  
      {  
-        alert('You need to input valid port 0-65535');
+        alert('You need to input something');
         document.getElementById("PORT").style.borderColor="red";
         document.getElementById("PORT").style.backgroundColor="yellow";
         document.getElementById("PORT").style.borderWidth=2;
