@@ -140,10 +140,12 @@
 <p>You can populate your own ip-address and port in the coresponding fields</p>
 <p>After that just click the "Fill" button and copy whatever type you need :)</p>
 <form action="#">
-Your IP: <input type="text" id="IP" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="desired ip" value="">
-Your Port: <input type="text" id="PORT" required pattern="\d[1,5]\" placeholder="desired port" value="">
-<button id="btSubmt" disabled onclick="myFunction()">Fill</button>
-<button id="btClear" disabled onclick="reset()">Clear</button>
+	<div>
+	  Your IP: <input type="text" id="IP" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="desired ip" value="">
+	  Your Port: <input type="text" id="PORT" required pattern="\d[1,5]\" placeholder="desired port" value="">
+	  <button id="btSubmt" disabled onclick="myFunction()">Fill</button>
+	  <button id="btClear" disabled onclick="reset()">Clear</button>
+	</div>
 </form>
 <br> </br>
 <button id="btSubmt" disabled onclick="myFunction()">Fill</button>
@@ -162,9 +164,25 @@ if(document.getElementById("IP").value=='')
     else if (document.getElementById("PORT").value=='')  
      {  
         alert('You need to input valid port 0-65535');
-        document.getElementById("email").style.borderColor="red";
-        document.getElementById("email").style.backgroundColor="yellow";
-        document.getElementById("email").style.borderWidth=2;
+        document.getElementById("PORT").style.borderColor="red";
+        document.getElementById("PORT").style.backgroundColor="yellow";
+        document.getElementById("PORT").style.borderWidth=2;
+       return false;  
+     }
+    else if (document.getElementById("IP").str.match("/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/")
+     {  
+        alert('You need to input valid IP format');
+        document.getElementById("IP").style.borderColor="red";
+        document.getElementById("IP").style.backgroundColor="yellow";
+        document.getElementById("IP").style.borderWidth=2;
+       return false;  
+     }
+    else if (document.getElementById("PORT").str.match("/^[0-9]{1-5}$/")
+     {  
+        alert('Port must be between 0-65535');
+        document.getElementById("PORT").style.borderColor="red";
+        document.getElementById("PORT").style.backgroundColor="yellow";
+        document.getElementById("PORT").style.borderWidth=2;
        return false;  
      } 
     else {
