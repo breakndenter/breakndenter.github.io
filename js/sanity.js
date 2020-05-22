@@ -58,9 +58,7 @@ for (var i = 0; i < elements.length; i++) {
   var r_ip = document.getElementById("IP").value;
   var ip = str.replace("YOUR_IP", r_ip);
   elements[i].innerHTML = ip;
-}
 
-var elements = document.getElementsByClassName('highlight');
 for (var p = 0; p < elements.length; p++) {
   var str = elements[p].innerHTML;
   var r_port = document.getElementById("PORT").value;
