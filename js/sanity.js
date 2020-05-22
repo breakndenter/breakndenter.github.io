@@ -28,20 +28,14 @@ if(ip_addr == ' ')
         document.getElementById("result").innerHTML = txt;
         return false;  
      }
-    else if {
-            var elements = document.getElementsByClassName('highlight');
-            for (var p = 0; p < elements.length; p++) {
-                    var str = elements[i].innerHTML;
-                    var r_ip = document.getElementById("IP").value;
-                    if(r_ip != ip_addr)
-            }
-     {
-        txt = "Please clear the fields and start over";
-        document.getElementById("result").innerHTML = txt;
-        document.getElementById("IP").value = ip_addr;
-        return false;
-     }
-    }
+    else if (ip_addr_changed != ip_addr)
+	{
+		function reset();
+	}
+    else if (port_nu_changed != port_n)
+	{
+		function reset();
+	}
     else {
 document.getElementById("btClear").disabled = false;
 var elements = document.getElementsByClassName('highlight');
@@ -60,6 +54,8 @@ for (var p = 0; p < elements.length; p++) {
   elements[p].innerHTML = port;
   txt = "You are now ready to copy your desired shell down below";
   document.getElementById("result").innerHTML = txt;
+  var ip_addr_changed = document.getElementById("IP").value;
+  var port_nu_changed = document.getElementById("PORT").value;
   return true;
 }
 }
