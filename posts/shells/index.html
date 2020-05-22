@@ -152,7 +152,7 @@
 
 function myFunction() {
 	var patt = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-	var patp = /^\d{5}$/;
+	var patp = /^\d{1.5}$/;
 	var ip_addr = document.getElementById("IP").value
 	var port_n = document.getElementById("PORT").value
 if(ip_addr == ' ')
@@ -221,8 +221,6 @@ function reset() {
   var port = str.replace(r_port, "PORT");
   elements[p].innerHTML = port;
 }
-  document.getElementById('IP').value = '';
-  document.getElementById('PORT').value = '';
   document.getElementById("btClear").disabled = true;
 }
 
