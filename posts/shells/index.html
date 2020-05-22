@@ -143,7 +143,7 @@ Your IP: <input type="text" id="IP" required placeholder="desired ip" value="">
 Your Port: <input type="text" id="PORT" placeholder="desired port" value="">
 <button id="btSubmt" onclick="myFunction()">Fill</button>
 <button id="btClear" disabled onclick="reset()">Clear</button>
-<p id = "result"> </p>
+<p style="color:red" id = "result"> </p>
 <script>
 
 function myFunction() {
@@ -199,8 +199,6 @@ for (var p = 0; p < elements.length; p++) {
 }
 }
 
-</script>
-<script>
 
 function reset() {
   var elements = document.getElementsByClassName('highlight');
@@ -217,6 +215,8 @@ function reset() {
   elements[p].innerHTML = port;
 }
   document.getElementById("btClear").disabled = true;
+  txt = ""
+  document.getElementById("result").innerHTML = txt;
 }
 
 
