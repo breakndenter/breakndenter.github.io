@@ -139,10 +139,10 @@
 
 <p>You can populate your own ip-address and port in the coresponding fields</p>
 <p>After that just click the "Fill" button and copy whatever type you need :)</p>
-	  Your IP: <input type="text" id="IP" required placeholder="desired ip" value="">
-	  Your Port: <input type="text" id="PORT" placeholder="desired port" value="">
-	  <button id="btSubmt" onclick="myFunction()">Fill</button>
-	  <button id="btClear" onclick="reset()">Clear</button>
+Your IP: <input type="text" id="IP" required placeholder="desired ip" value="">
+Your Port: <input type="text" id="PORT" placeholder="desired port" value="">
+<button id="btSubmt" onclick="myFunction()">Fill</button>
+<button id="btClear" disabled onclick="reset()">Clear</button>
 <br> </br>
 <script>
 
@@ -201,6 +201,7 @@ for (var p = 0; p < elements.length; p++) {
   return true;
 }
 }
+  document.getElementById("btClear").disabled = false;
 }
 
 </script>
